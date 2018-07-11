@@ -10,12 +10,12 @@ $color-black: #000;
 $fonts: 'Open Sans', sans-serif;
 
 body {
-background-color: $color-grey;
+background-color: $color-black;
 }
 
 h1 {
 	text-transform: uppercase;
-	color: $color-black;
+	color: $color-white;
 	text-align: center;
 	font-size: 52px;
 }
@@ -25,7 +25,7 @@ p {
 	a {
 		text-decoration: none;
 		font-size: 16px;
-		color: $color-black;
+		color: $color-white;
 		padding: 20px 10px;
 		font-weight: bold;
 	}
@@ -69,4 +69,16 @@ p {
   height: 30px;
   width: 0;
   background: #333;
+}
+
+.map-container {
+	width: 90vw;
+	height: 50vh;
+    margin: 0 auto;
+	min-height: 250px;
+	.map {
+		max-width: 1200px;
+		margin: 0 auto;
+		height: 50vh;
+	}
 }
