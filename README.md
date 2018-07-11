@@ -1,1 +1,1 @@
-# 10.3-plugins-JS
+# https://kciucias.github.io/10.3-plugins-JS/
