@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plugins</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.1.2/flickity.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>Gallery</h1>
+
+<p class="button-group">
+  <a href="#carousel-cell1" data-index="0">Slide 1</a>
+  <a href="#carousel-cell2" data-index="1">Slide 2</a>
+  <a href="#carousel-cell3" data-index="2">Slide 3</a>
+  <a href="#carousel-cell4" data-index="3">Slide 4</a>
+  <a href="#carousel-cell5" data-index="4">Slide 5</a>
+</p>
+
+<button id="reset" class="button">Reset</button>
+<div class="main-carousel" id="results">
+
+<script id="template-slide" type="x-tmpl-mustache">
+      <div class="carousel-cell" style="background-image: url({{ image }}); background-size: cover;">
+        <div class="container">
+          <p>{{ title }}</p>
+        </div>
+      </div>
+</script>
+
+</div>
+<div class="progress-bar"></div>
+
+<script>
+var slides = [
+  {
+    image: 'https://images.unsplash.com/photo-1530480667809-b655d4dc3aaa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d95de6418decb6042f2ab13f114f7ac0&auto=format&fit=crop&w=500&q=60',
+    title: 'Slide 1',
+    description: 'First slide'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1530514642851-84069c4c5a95?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1aa13e175cba068f4080275dae9d1682&auto=format&fit=crop&w=500&q=60',
+    title: 'Slide 2',
+    description: 'Second slide'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1530484490308-d5f6e103e149?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=db3be4d42ecb40d27750b3e13d05d306&auto=format&fit=crop&w=500&q=60',
+    title: 'Slide 3',
+    description: 'Third slide'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1530520040872-8cbb7ee8a11b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c0ad59505f2e0f7041eeb39c0f62d23&auto=format&fit=crop&w=500&q=60',
+    title: 'Slide 4',
+    description: 'Forth slide'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1530475881581-e0e8a26b8192?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0c85dd56eed0292235088eab798a96d2&auto=format&fit=crop&w=500&q=60',
+    title: 'Slide 5',
+    description: 'Fifth slide'
+  }
+];
+</script>
+
+<div class="progress-bar"></div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.1.2/flickity.pkgd.min.js"></script>
+      <script src="https://unpkg.com/flickity-hash@1/hash.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+      <script src="js/script.js"></script>
+  </body>
+</html>
