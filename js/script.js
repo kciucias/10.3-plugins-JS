@@ -52,23 +52,21 @@ for (var i = 0; i < anchors.length; i++) {
 
 // MAPS
     window.initMap = function() {
-    
       // Zapisujemy w zmiennej obiekt zawierający współrzędne geograficzne.
-      var uluru = {lat: -25.363, lng: 131.044};
-      
+      var krakow = {lat: 50.062112, lng: 19.929334};
       // W zmiennej map zapisujemy nową instancję obiektu Map. 
       var map = new google.maps.Map(document.getElementById('map'), {
         // Podajemy opcje mapy, np. zoom i punkt wycentrowania mapy.
-        zoom: 4,
-        center: uluru
+        center: krakow,
+        zoom: 7,
       });
-      
-      // Definiujemy marker jako nową instancję obiektu Marker.
+
+      for (var key in slides) { 
       var marker = new google.maps.Marker({
-        // I podajemy opcje tego markera, np. na której mapie ma być dodany oraz jakie są jego współrzędne. 
-        position: uluru,
-        map: map
-      }); 
-    };
+      position: slides[key]['coords'], map: map})
+    }
+}
+
 
 })(); 
+
