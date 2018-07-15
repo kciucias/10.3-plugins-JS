@@ -50,21 +50,23 @@ for (var i = 0; i < anchors.length; i++) {
 
 // MAPS
     window.initMap = function() {
-      // Zapisujemy w zmiennej obiekt zawierający współrzędne geograficzne.
+      
       var krakow = {lat: 50.062112, lng: 19.929334};
-      // W zmiennej map zapisujemy nową instancję obiektu Map. 
+
       var map = new google.maps.Map(document.getElementById('map'), {
-        // Podajemy opcje mapy, np. zoom i punkt wycentrowania mapy.
         center: krakow,
         zoom: 7,
       });
 
       for (var i = 0; i < slides.length; i++) {
         var marker = new google.maps.Marker({
-          position: slides[i]['coords'], map: map})
+          position: slides[i]['coords'], 
+          map: map
+        })
 
-          google.maps.event.addListener(marker,'click', function() {
+      marker.addListener('click', function() {
           flkty.select(i);
+          map.setCenter(marker.getPosition());
         })
 
       }
