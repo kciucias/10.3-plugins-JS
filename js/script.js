@@ -13,8 +13,6 @@ for (var i = 0; i < slides.length; i++){
   allSlides += Mustache.render(templateSlide, slides[i]);
 }
 
-//var generateSlides = Mustache.render(templateSlide, allSlides)
-
 results.insertAdjacentHTML('beforeend', allSlides);
 
 //carousel
@@ -61,12 +59,34 @@ for (var i = 0; i < anchors.length; i++) {
         zoom: 7,
       });
 
+      for (var i = 0; i < slides.length; i++) {
+        var marker = new google.maps.Marker({
+          position: slides[i]['coords'], map: map})
+
+          google.maps.event.addListener(marker,'click', function() {
+          flkty.select(i);
+        })
+
+      }
+
+/*    2nd option to add markers
       for (var key in slides) { 
       var marker = new google.maps.Marker({
       position: slides[key]['coords'], map: map})
     }
+*/
+
+
 }
 
 
 })(); 
 
+
+// progress bar
+var progressBar = document.querySelector('.progress-bar')
+
+flkty.on( 'scroll', function( progress ) {
+  progress = Math.max( 0, Math.min( 1, progress ) );
+  progressBar.style.width = progress * 100 + '%';
+});
