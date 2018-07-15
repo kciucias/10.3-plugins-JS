@@ -60,11 +60,9 @@ for (var i = 0; i < anchors.length; i++) {
 
       for (var i = 0; i < slides.length; i++) {
         var marker = new google.maps.Marker({
-          position: slides[i]['coords'], 
-          map: map
-        })
+          position: slides[i]['coords'], map: map})
 
-      marker.addListener('click', function() {
+          google.maps.event.addListener(marker,'click', function() {
           flkty.select(i);
           map.setCenter(marker.getPosition());
         })
