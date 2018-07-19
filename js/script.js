@@ -60,13 +60,15 @@ for (var i = 0; i < anchors.length; i++) {
 
       for (var i = 0; i < slides.length; i++) {
         var marker = new google.maps.Marker({
-          position: slides[i]['coords'], map: map})
+          position: slides[i]['coords'], map: map});
 
-          google.maps.event.addListener(marker,'click', function() {
-          flkty.select(i);
-          map.setCenter(marker.getPosition());
-        })
-
+          (function(i) {
+            google.maps.event.addListener(marker,'click', function() {
+              console.log(marker, slides, i);
+              flkty.select(i + 1);
+              map.setCenter(marker.getPosition());
+            });
+          })(i);
       }
 
 /*    2nd option to add markers
@@ -78,15 +80,4 @@ for (var i = 0; i < anchors.length; i++) {
 
 
 }
-
-
 })(); 
-
-
-// progress bar
-var progressBar = document.querySelector('.progress-bar')
-
-flkty.on( 'scroll', function( progress ) {
-  progress = Math.max( 0, Math.min( 1, progress ) );
-  progressBar.style.width = progress * 100 + '%';
-});
